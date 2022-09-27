@@ -29,14 +29,14 @@ while should_cont == True:
 
     print("\33[32m---Starting Cipher---\33[0m\n")
     
-    direction = input("Type \33[1m[Encode]\33[0m to encrypt, type \33[1m[Decode]\33[0m to decrypt: ").lower()
+    direction = input("Type \33[1m[Encode]\33[0m to encrypt\nType \33[1m[Decode]\33[0m to decrypt\n").lower()
     clear()
     logo()
-    text = input("Type your message:\n").lower()
+    text = input("Type the message:\n").lower()
     clear()
     logo()
     text_list = [*text]
-    shift = int(input("Type the code number: "))
+    shift = int(input("Code number: "))
     clear()
     logo()
     
