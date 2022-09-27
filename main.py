@@ -1,5 +1,4 @@
 # Caesar Cipher v2
-# Todo: Make code run even if user enters number/symbol/space
 from letnumsym import *
 from replit import clear
 from ascii_art import *
@@ -13,8 +12,12 @@ def caesar():
 
     end_text = ""
     for char in text:
-        index = letters.index(char)
-        end_text += shift_letters[index]
+        # Make code run even if user enters number/symbol/space
+        if char in letters:
+            index = letters.index(char)
+            end_text += shift_letters[index]
+        elif char in num_sym:
+            end_text += char
         
     # Print the end text
     print(f"The {direction}d text is {end_text}.")
