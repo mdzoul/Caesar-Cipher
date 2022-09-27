@@ -20,22 +20,23 @@ def caesar():
             end_text += char
         
     # Print the end text
-    print(f"The {direction}d text is {end_text}.")
-    # Allows user to restart program
-    input()
+    print(f"The \33[1m{direction}d\33[0m message is:\n\33[31m{end_text}\33[0m")
 
-while True:
+should_cont = True
+while should_cont == True:
     clear()
     logo()
+
+    print("\33[32m---Starting Cipher---\33[0m\n")
     
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: ")
+    direction = input("Type \33[1m[Encode]\33[0m to encrypt, type \33[1m[Decode]\33[0m to decrypt: ").lower()
     clear()
     logo()
-    text = input("Type your message: ").lower()
+    text = input("Type your message:\n").lower()
     clear()
     logo()
     text_list = [*text]
-    shift = int(input("Type the shift number: "))
+    shift = int(input("Type the code number: "))
     clear()
     logo()
     
@@ -44,3 +45,12 @@ while True:
         shift = shift % 26
     
     caesar()
+    # Allows user to restart program
+    cont = input("\33[1m\nContinue?\33[0m Y/N\n")
+    if cont == "y":
+        should_cont = True
+    elif cont == "n":
+        should_cont = False
+        clear()
+        logo()
+        print("\33[31m---Shutting Down---\33[0m")
